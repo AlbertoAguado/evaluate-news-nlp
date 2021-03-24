@@ -42,6 +42,8 @@ app.post("/analyzeUrl", async(req, res) => {
             }
         });
 
+        console.log(req.body);
+
     try {
         const newData = await response.json();
         console.log(newData)
