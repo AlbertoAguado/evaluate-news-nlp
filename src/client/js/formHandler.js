@@ -7,7 +7,7 @@ function handleSubmit(event) {
     let inputForm = document.getElementById('name').value
     if (Client.urlChecker(inputForm)) {
         console.log("Handle Submit OK")
-        fetch("http://localhost:8000/analyzeUrl", {
+        fetch("http://localhost:8000/sentiment", {
             method: "POST",
             credentials: "same-origin",
             headers: {
