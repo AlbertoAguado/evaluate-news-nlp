@@ -15,7 +15,3 @@ test('url with random number at the beginning', () => {
 test('url with https://', () => {
     expect(urlChecker("https://www.bbc.com/news/world")).toBe(true);
   });
-
-test('url with https:// and empty', () => {
-    expect(urlChecker("https://")).toBe(false);
-  });
