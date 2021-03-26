@@ -1,3 +1,4 @@
+const fetch = require('node-fetch')
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -41,18 +42,9 @@ app.get('/test', function (req, res) {
 })
 
 
-app.post('/sentiment', function (req, res) {
-    console.log(req.body)
-    let url = req.body.url;
-    fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&lang=auto&url=${req.body}`)
-    .then(response => response.json())
-    .then(function(data) {
-        console.log(data.score_tag)
-        console.log(data.subjectivity)
-        let textSubjectivity= data.subjectivity
-        let sentiment= data.score_tag
-        
-        res.send(JSON.stringify({sentiment:sentiment, subjectivity:textSubjectivity }))
-        })   
-    // res.sendFile('dist/index.html')
+app.post('/sentiment', async function (req, res) {
+    let url = req.body.inputForm;
+    const response = await fetch (`https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&lang=auto&url=${url}`)
+    const result = await response.json()
+    res.send(result)
 })
