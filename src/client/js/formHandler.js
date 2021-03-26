@@ -30,11 +30,14 @@ function handleSubmit(event) {
 }
 
 
-function obtenerResultados(data) {
-    console.log("este es el data:"+data);
-    document.getElementById("agreement").innerHTML = `Agreement: ${data.agreement}`;
-    document.getElementById("subjectivity").innerHTML = `Subjectivity: ${data.subjectivity}`;
-    document.getElementById("irony").innerHTML = `Irony: ${data.irony}`;
+function obtenerResultados(analysis) {
+    console.log("este es el data:"+analysis);
+    
+    document.querySelector("#subjetividad").innerHTML = `Subjectivity: ${analysis.subjectivity}`;
+
+    document.querySelector("#acuerdo").innerHTML = `Agreement: ${analysis.agreement}`;
+    
+    document.querySelector("#ironia").innerHTML = `Irony: ${analysis.irony}`;
 }
 
 export { handleSubmit }
