@@ -32,12 +32,30 @@ function handleSubmit(event) {
 
 function obtenerResultados(analysis) {
     console.log("este es el data:"+analysis);
-    
+
     document.querySelector("#subjetividad").innerHTML = `Subjectivity: ${analysis.subjectivity}`;
 
+    if (analysis.subjectivity === "objective") {
+        document.querySelector("#subjetividad").style.backgroundColor = 'green';
+    } else {
+        document.querySelector("#subjetividad").style.backgroundColor = 'red';
+    }
+
     document.querySelector("#acuerdo").innerHTML = `Agreement: ${analysis.agreement}`;
+
+    if (analysis.agreement === "AGREEMENT") {
+        document.querySelector("#acuerdo").style.backgroundColor = 'green';
+    } else {
+        document.querySelector("#acuerdo").style.backgroundColor = 'red';
+    }
     
     document.querySelector("#ironia").innerHTML = `Irony: ${analysis.irony}`;
+
+    if (analysis.irony === "NONIRONIC") {
+        document.querySelector("#ironia").style.backgroundColor = 'green';
+    } else {
+        document.querySelector("#ironia").style.backgroundColor = 'red';
+    }
 }
 
 export { handleSubmit }
