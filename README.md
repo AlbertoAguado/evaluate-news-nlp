@@ -9,3 +9,10 @@ From the terminal:
 npm run build-prod
 
 npm start
+
+
+Some chunks of the code were obtained from the Udacity´s knowledge forum where I asked some questions:
+
+https://knowledge.udacity.com/questions/530055
+
+https://knowledge.udacity.com/questions/530387
